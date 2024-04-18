@@ -14,3 +14,9 @@ uppername= name.upper()
 lowername= name.lower()
 titlename= name.title()
 print(uppername, lowername, titlename)
+#2-5 
+#2-6
+#2-8 Assign the value "python_notes.txt" to a variables called filename. 
+#Then used the remoesuffix() method to display the filename without the file extension, like some file browsers do
+filename : str= "python_notes.txt"
+print(filename.removesuffix(".txt"))
