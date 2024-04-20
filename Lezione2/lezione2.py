@@ -2,9 +2,6 @@
 # 18/04/2024
 #2-3 Personal Message: use a variable to represent a person's name, and print a message to that person. 
 #your message should be simple like this: "Hello Eric, would you like to learn some python today?"
-from audioop import reverse
-
-
 name = "Mario"
 print(f"Hello", (name), ", would you like to learn some python today?")
 #2-4 Use a variable to represent a person's name, and then print tht person's name in uppercase, lowercase and titlecase
@@ -14,10 +11,10 @@ lowername= name.lower()
 titlename= name.title()
 print(uppername, lowername, titlename)
 #2-5.Famous Quote: Find a quote from a famous person you admire. Print the quote and the name of its author. Your output should look something like the following, including the quotation marks:
-#    Albert Einstein once said, ìA person who never made a mistake never tried anything new.î
+#    Albert Einstein once said, ‚ÄúA person who never made a mistake never tried anything new.‚Äù
 name = "Albert_Einstein once said,"
 print(name, "'Only a life lived for others is a life worthless'")
-#2-6. Famous Quote 2: Repeat Exercise 2-5, but this time, represent the famous personís name using a variable called famous_person. 
+#2-6. Famous Quote 2: Repeat Exercise 2-5, but this time, represent the famous person‚Äôs name using a variable called famous_person. 
 #Then compose your message and represent it with a new variable called message. Print your message.
 famous_person = "Albert_Einstein"
 message = "once said: 'Only a life lived for others is a life worthless'"
@@ -27,43 +24,43 @@ print(famous_person, message)
 filename : str= "python_notes.txt"
 print(filename.removesuffix(".txt"))
 #3-1. Names: Store the names of a few of your friends in a list called names. 
-#     Print each personís name by accessing each element in the list, one at a time.
+#     Print each person‚Äôs name by accessing each element in the list, one at a time.
 names=["Damiano", "Gioia", "Riccardo"]
 print(names[0])
 print(names[1])
 print(names[2])
 
-#3-2. Greetings: Start with the list you used in Exercise 3-1, but instead of just printing each personís name, print a message to them. The text of each message should be the same, but each message should be personalized with the personís name.
+#3-2. Greetings: Start with the list you used in Exercise 3-1, but instead of just printing each person‚Äôs name, print a message to them. The text of each message should be the same, but each message should be personalized with the person‚Äôs name.
 print(f"ciao", (names[0]), "!")
 print(f"ciao", (names[1]), "!")
 print(f"ciao", (names[2]), "!")
 #3-3. Your Own List: Think of your favorite mode of transportation, such as a motorcycle or a car, and make a list that stores several examples. 
-#Use your list to print a series of statements about these items, such as ìI would like to own a Honda motorcycle.î
+#Use your list to print a series of statements about these items, such as ‚ÄúI would like to own a Honda motorcycle.‚Äù
 cars=["Ferrari", "Mclaren", "BMW"]
 print(f"I would like to drive a", (cars[0]))
 print(f"I would like to drive a", (cars[1]))
 print(f"I would like to drive a", (cars[2]))
 
-#3-4. Guest List: If you could invite anyone, living or deceased, to dinner, who would you invite? Make a list that includes at least three people youíd like to invite to dinner. 
+#3-4. Guest List: If you could invite anyone, living or deceased, to dinner, who would you invite? Make a list that includes at least three people you‚Äôd like to invite to dinner. 
 #Then use your list to print a message to each person, inviting them to dinner.
 
-#3-5. Changing Guest List: You just heard that one of your guests canít make the dinner, so you need to send out a new set of invitations. Youíll have to think of someone else to invite.
-#ï Start with your program from Exercise 3-4. Add a print() call at the end of your program, stating the name of the guest who canít make it.
-#ï Modify your list, replacing the name of the guest who canít make it with the name of the new person you are inviting.
-#ï Print a second set of invitation messages, one for each person who is still in your list.
+#3-5. Changing Guest List: You just heard that one of your guests can‚Äôt make the dinner, so you need to send out a new set of invitations. You‚Äôll have to think of someone else to invite.
+#‚Ä¢ Start with your program from Exercise 3-4. Add a print() call at the end of your program, stating the name of the guest who can‚Äôt make it.
+#‚Ä¢ Modify your list, replacing the name of the guest who can‚Äôt make it with the name of the new person you are inviting.
+#‚Ä¢ Print a second set of invitation messages, one for each person who is still in your list.
 
 #3-6. More Guests: You just found a bigger dinner table, so now more space is available. Think of three more guests to invite to dinner.
-#ï Start with your program from Exercise 3-4 or 3-5. Add a print() call to the end of your program, informing people that you found a bigger table.
-#ï Use insert() to add one new guest to the beginning of your list.
-#ï Use insert() to add one new guest to the middle of your list.
-#ï Use append() to add one new guest to the end of your list.
-#ï Print a new set of invitation messages, one for each person in your list.
+#‚Ä¢ Start with your program from Exercise 3-4 or 3-5. Add a print() call to the end of your program, informing people that you found a bigger table.
+#‚Ä¢ Use insert() to add one new guest to the beginning of your list.
+#‚Ä¢ Use insert() to add one new guest to the middle of your list.
+#‚Ä¢ Use append() to add one new guest to the end of your list.
+#‚Ä¢ Print a new set of invitation messages, one for each person in your list.
 
-#3-7. Shrinking Guest List: You just found out that your new dinner table wonít arrive in time for the dinner, and now you have space for only two guests.
-#ï Start with your program from Exercise 3-6. Add a new line that prints a message saying that you can invite only two people for dinner.
-#ï Use pop() to remove guests from your list one at a time until only two names remain in your list. Each time you pop a name from your list, print a message to that person letting them know youíre sorry you canít invite them to dinner.
-#ï Print a message to each of the two people still on your list, letting them know theyíre still invited.
-#ï Use del to remove the last two names from your list, so you have an empty list. Print your list to make sure you actually have an empty list at the end of your program.
+#3-7. Shrinking Guest List: You just found out that your new dinner table won‚Äôt arrive in time for the dinner, and now you have space for only two guests.
+#‚Ä¢ Start with your program from Exercise 3-6. Add a new line that prints a message saying that you can invite only two people for dinner.
+#‚Ä¢ Use pop() to remove guests from your list one at a time until only two names remain in your list. Each time you pop a name from your list, print a message to that person letting them know you‚Äôre sorry you can‚Äôt invite them to dinner.
+#‚Ä¢ Print a message to each of the two people still on your list, letting them know they‚Äôre still invited.
+#‚Ä¢ Use del to remove the last two names from your list, so you have an empty list. Print your list to make sure you actually have an empty list at the end of your program.
 Person=[ "Batman", "Brad Pitt", "Mike Tyson"]
 print(f"Hello", (Person[0]), ", I would like to invite you in a dinner")
 print(f"Hello", (Person[1]), ", I would like to invite you in a dinner")
@@ -100,17 +97,17 @@ print((Person[0]), "," ,(Person[1]), "you are invited to the dinner")
 del Person[0]
 del Person[0]
 print(Person)
-#3-8. Seeing the World: Think of at least five places in the world youíd like to visit.
-#ï Store the locations in a list. Make sure the list is not in alphabetical order.
-#ï Print your list in its original order. Donít worry about printing the list neatly; just print it as a raw Python list.
-#ï Use sorted() to print your list in alphabetical order without modifying the actual list.
-#ï Show that your list is still in its original order by printing it.
-#ï Use sorted() to print your list in reverse-alphabetical order without changing the order of the original list.
-#ï Show that your list is still in its original order by printing it again.
-#ï Use reverse()  to change the order of your list. Print the list to show that its order has changed.
-#ï Use reverse() to change the order of your list again. Print the list to show itís back to its original order.
-#ï Use sort() to change your list so itís stored in alphabetical order. Print the list to show that its order has been changed.
-#ï Use sort() to change your list so itís stored in reverse-alphabetical order.
+#3-8. Seeing the World: Think of at least five places in the world you‚Äôd like to visit.
+#‚Ä¢ Store the locations in a list. Make sure the list is not in alphabetical order.
+#‚Ä¢ Print your list in its original order. Don‚Äôt worry about printing the list neatly; just print it as a raw Python list.
+#‚Ä¢ Use sorted() to print your list in alphabetical order without modifying the actual list.
+#‚Ä¢ Show that your list is still in its original order by printing it.
+#‚Ä¢ Use sorted() to print your list in reverse-alphabetical order without changing the order of the original list.
+#‚Ä¢ Show that your list is still in its original order by printing it again.
+#‚Ä¢ Use reverse()  to change the order of your list. Print the list to show that its order has changed.
+#‚Ä¢ Use reverse() to change the order of your list again. Print the list to show it‚Äôs back to its original order.
+#‚Ä¢ Use sort() to change your list so it‚Äôs stored in alphabetical order. Print the list to show that its order has been changed.
+#‚Ä¢ Use sort() to change your list so it‚Äôs stored in reverse-alphabetical order.
 #Print the list to show that its order has changed.
 city=["Milan", "Turin", "Bologna", "L.A", "New York"]
 print(city)
@@ -125,9 +122,9 @@ city.sort()
 print(city)
 city.reverse()
 print(city)
-#3-9. Dinner Guests: Working with one of the programs from Exercises 3, use len() to print a message indicating the number of people youíre inviting to dinner.
+#3-9. Dinner Guests: Working with one of the programs from Exercises 3, use len() to print a message indicating the number of people you‚Äôre inviting to dinner.
 
-#3-10. Every Function: Think of things you could store in a list. For example, you could make a list of mountains, rivers, countries, cities, languages, or anything else youíd like. 
+#3-10. Every Function: Think of things you could store in a list. For example, you could make a list of mountains, rivers, countries, cities, languages, or anything else you‚Äôd like. 
 #Write a program that creates a list containing these items and then uses each function introduced in this chapter at least once.
 L=["uno", "due", "tre", "quattro", "cinque", "sei", "sette"]
 ordered= sorted(L)
