@@ -2,9 +2,6 @@
 # 18/04/2024
 #2-3 Personal Message: use a variable to represent a person's name, and print a message to that person. 
 #your message should be simple like this: "Hello Eric, would you like to learn some python today?"
-from audioop import reverse
-
-
 name = "Mario"
 print(f"Hello", (name), ", would you like to learn some python today?")
 #2-4 Use a variable to represent a person's name, and then print tht person's name in uppercase, lowercase and titlecase
@@ -144,34 +141,20 @@ L.insert(3, "Quattordici")
 print(L)
 L.append("Dieci")
 print(L)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#6-1. Person: Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
+# You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.
+Amico={"first_name":"Damiano", "last_name": "Muni", "age":19, "city":"Rome"}
+print(Amico["first_name"])
+print(Amico["last_name"])
+print(Amico["age"])
+print(Amico["city"])
+#6-2. Favorite Numbers: Use a dictionary to store people’s favorite numbers. Think of five names, and use them as keys in your dictionary. 
+#Think of a favorite number for each person, and store each as a value in your dictionary. Print each person’s name and their favorite number. 
+#For even more fun, poll a few friends and get some actual data for your program.
+People_num={"Marco":2, "Lorenzo": 10, "Paolo": 5, "Luca": 78}
+print(People_num)
+#6-3. Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+#• Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
+#• Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, 
+#  or print the word on one line and then print its meaning indented on a second line. 
+#  Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
