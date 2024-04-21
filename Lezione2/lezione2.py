@@ -181,3 +181,12 @@ for keys, values in favorite_places.items():
     print(keys, values)
 
 #6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. Then print each person’s name along with their favorite numbers.
+People_num={"Marco":"2, 5, 6, 7", "Lorenzo": "10, 3, 6, 2", "Paolo": "5, 18, 45", "Luca": "78, 23, 44"}
+print(People_num)
+#6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. 
+#Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. 
+#The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
+cities={"Roma":, "Bologna", "Venezia"}
+information={"Country:" :"Italy", "Population:": "2.800.000", "Country:" :"Italy", "Population:": "388.000", "Country:" :"Italy", "Population:": "260.000"}
+#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
+#Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, or improving the formatting of the output.
