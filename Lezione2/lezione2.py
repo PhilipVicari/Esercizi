@@ -158,3 +158,26 @@ print(People_num)
 #• Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, 
 #  or print the word on one line and then print its meaning indented on a second line. 
 #  Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
+
+#[6-7. People: Start with the program you wrote for Exercise 6-1. 
+#Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. 
+#As you loop through the list, print everything you know about each person.
+dict1={"first_name":"Lorenza", "last_name": "Verdi", "age":19, "city":"Rome", "first_name":"Mario", "last_name": "Rossi", "age":25, "city":"Rome"}
+dict2={"first_name":"Riccardo", "last_name": "Malizia", "age":20, "city":"Rome", "first_name":"Gabriele", "last_name": "Mancini", "age":17, "city":"Rome"}
+People=[dict1, dict2, Amico]
+print(People)
+#6-8. Pets: Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner’s name. 
+#Store these dictionaries in a list called pets. Next, loop through your list and as you do, print everything you know about each pet.
+pet1={"Pet:": "cat", "owner:": "Mario"}
+pet2={"Pet:": "bunny", "owner:": "Gabriele"}
+pet3={"Pet:": "dog", "owner:": "Damiano"}
+pets=[pet1, pet2, pet3]
+for elem in pets:
+    print(elem)
+#6-9. Favorite Places: Make a dictionary called favorite_places. Think of three names to use as keys in the dictionary, and store one to three favorite places for each person. 
+#To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. Loop through the dictionary, and print each person’s name and their favorite places.
+favorite_places={"Valerio": "Villa Borghese", "Mario": "Colosseo", "Gioia": "Via Del Corso"}
+for keys, values in favorite_places.items():
+    print(keys, values)
+
+#6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. Then print each person’s name along with their favorite numbers.
