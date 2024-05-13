@@ -28,3 +28,23 @@ restaurant3.open_restaurant()
 
 restaurant4.describe_restaurant()
 restaurant4.open_restaurant()
+#9-3. Users: Make a class called User. 
+#Create two attributes called first_name and last_name, and then create several other attributes that are typically stored in a user profile. 
+#Make a method called describe_user() that prints a summary of the user’s information. 
+#Make another method called greet_user() that prints a personalized greeting to the user. 
+#Create several instances representing different users, and call both methods for each user.
+class User:
+    def __init__(self, first_name, last_name, age, hair, eyes) -> None:
+        self.first_name= first_name
+        self.last_name= last_name
+        self.age= age
+        self.hair= hair
+        self.eyes= eyes
+    def describe_user(self):
+        summary= self.first_name, self.last_name, self.age, self.hair, self.eyes
+        return summary
+    def greet_user(self):
+        print("hi", self.name, "nice to meet you")
+
+
+person1= User("Mattia", "Massimi", 33, "Brown", "Brown")
