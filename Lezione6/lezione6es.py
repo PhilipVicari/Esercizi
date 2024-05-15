@@ -44,7 +44,24 @@ class User:
         summary= self.first_name, self.last_name, self.age, self.hair, self.eyes
         return summary
     def greet_user(self):
-        print("hi", self.name, "nice to meet you")
-
+        print("\n", "hi", self.first_name, "nice to meet you")
 
 person1= User("Mattia", "Massimi", 33, "Brown", "Brown")
+
+person1.describe_user()
+person1.greet_user()
+#9-4. Number Served: Start with your program from Exercise 9-1. Add an attribute called number_served with a default value of 0. 
+#Create an instance called restaurant from this class. Print the number of customers the restaurant has served, and then change this value and print it again. 
+#Add a method called set_number_served() that lets you set the number of customers that have been served. Call this method with a new number and print the value again.
+# Add a method called increment_number_served() that lets you increment the number of customers who’ve been served. 
+#Call this method with any number you like that could represent how many customers were served in, say, a day of business. 
+class restaurant:
+    def __init__(self, name, cuisine_type) -> None:
+        self.name= name
+        self.cuisine_type= cuisine_type
+    def describe_restaurant(self):
+        print("\n", self.name)
+        print(self.cuisine_type)
+    def open_restaurant(self):
+        print(f"The", self.name, "is open!")
+restaurant1=restaurant("La Parolaccia", "Roman cuisine")
