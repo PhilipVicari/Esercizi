@@ -1,3 +1,4 @@
+"""
 def print_seq(): 
     
     print("Sequenza a):")
@@ -71,3 +72,50 @@ def check_parentheses(expression: str) -> bool:
         return False
 espressione=check_parentheses("((((()))))")
 print(espressione)
+"""
+
+"---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+from abc import ABC, abstractmethod
+class Shape(ABC):
+    def __init__(self) -> None:
+        super().__init__()
+    @abstractmethod
+    def area(self):
+        pass
+    def perimeter(self):
+        pass
+class Circle(Shape):
+    def __init__(self, raggio, pigreco= 3.14) -> None:
+        super().__init__()
+        self.raggio= raggio
+        self.pigreco= pigreco
+        
+    def area(self):
+        return self.pigreco * self.raggio**2
+    
+    def perimeter(self):
+        return self.raggio *(2*self.pigreco)
+    
+class Rectangle(Shape):
+    def __init__(self, base, altezza) -> None:
+        super().__init__()
+        self.base= base
+        self.altezza= altezza
+        
+    def area(self):
+        return self.base * self.altezza
+    
+    def perimeter(self):
+        return (self.base + self.altezza)*2
+
+rettangolo = Rectangle(base=5, altezza=5)
+print(f"Perimetro del rettangolo: {rettangolo.perimeter()}")
+
+cerchio = Circle(raggio=5)
+print(f"Circonferenza del cerchio: {cerchio.perimeter()}")
+
+rettangolo = Rectangle(base=5, altezza=5)
+print(f"area del rettangolo: {rettangolo.area()}")
+
+cerchio = Circle(raggio=5)
+print(f"area del cerchio: {cerchio.area()}")
