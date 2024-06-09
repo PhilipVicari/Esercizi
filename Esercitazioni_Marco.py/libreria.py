@@ -25,27 +25,49 @@ class Libro:
         self.title= title
         self.author= author
         self.state_of_borrow= state_of_borrow
-class Biblioteca:
+        
+class Biblioteca():
     def __init__(self) -> None:
         self.catalogo=[]
-        libro={}
-    def __str__(self) -> str:
-        return self.catalogo
-    
-    def aggiungi_libro(self, libro):
+    def aggiungi_libro(self, libro: Libro):
         self.catalogo.append(libro)
-        return f"IL libro è stato aggiunto:{self.catalogo}"
+        return f"IL libro è stato aggiunto:{libro.title}"
+    
     def presta_libro(self, title):
         for libro in self.catalogo:
-            prestito:bool
-            if title in libro:
-                if prestito == True:
-                    return "Il libro è disponibile"
-                prestito= False
+            if libro.title == title:
+                if libro.state_of_borrow:
+                    libro.state_of_borrow = False
+                    return "Il libro è stato prestato"
+                else:
+                    return "Il libro non è disponibile"
     def restituisci_libro(self, title):
         for libro in self.catalogo:
-            prestito:bool
-            if title in libro:
-                if prestito==False:
+            if libro.title == title:
+                if not libro.state_of_borrow:
+                    libro.state_of_borrow = True
                     return "Il libro è tornato disponibile"
-                prestito = True
+                else:
+                    return "Il libro era già disponibile"
+                    
+    def mostra_libri_disponibili(self):
+        disponibili = []
+        for libro in self.catalogo:
+            if libro.state_of_borrow:
+                disponibili.append(libro.title)
+        return disponibili
+libro_1= Libro("1984", "George Orwell")
+libro_2= Libro("Le barzellette di Francesco Totti", "Francesco Totti")
+biblioteca_1= Biblioteca()
+print(biblioteca_1.aggiungi_libro(libro_1))
+print(biblioteca_1.aggiungi_libro(libro_2))
+
+print(biblioteca_1.presta_libro("1984"))
+print(biblioteca_1.presta_libro("Le barzellette di Francesco Totti"))
+
+print(biblioteca_1.presta_libro("1984"))
+print(biblioteca_1.presta_libro("Le barzellette di Francesco Totti"))
+
+print(biblioteca_1.restituisci_libro("1984"))
+print(biblioteca_1.restituisci_libro("Le barzellette di Francesco Totti"))
+print(biblioteca_1.mostra_libri_disponibili())
