@@ -31,9 +31,10 @@ i film affittati dal cliente.
     
     printRentMovies(clientID): questo metodo deve stampare la lista dei film noleggiati dal cliente di cui viene specificato l'id.
 """
-class Noleggio:
+from Esercitazioni_Marco.movie_genere import Azione, Commedia, Drama
+class Noleggio(Azione, Commedia, Drama):
     def __init__(self, listafilm):
-        self.listafilm=listafilm
+        self.listafilm= listafilm= []
         self.lista_Film_C=lista_Film_C=[]
         self.rentedfilm=rented_film={"id_client": lista_Film_C}
     def isAvaiable(self, film):
@@ -43,7 +44,20 @@ class Noleggio:
             else:
                 return f"Il film scelto non è disponibile!"
     def rentaMovie(self, film, clientID):
+        if film in self.listafilm:
+            self.listafilm.remove(film)
+            self.lista_Film_C.append(film)
+            self.rentedfilm[clientID]= [self.lista_Film_C]
+            return f"Il cliente {clientID} ha noleggiato {film}!"
+        else:
+            return f"Non è possibile noleggiare il film {film}"
+    def giveBack(self, film, clientID, days):
+        if film in self.lista_Film_C:
+            self.lista_Film_C.remove(film)
+            self.listafilm.append(film)
+        return f"Cliente: {clientID}! La penale da pagare per il film {film} e' di {self.calcola_penale_Ritardo} euro!"
+    def printMovies(self):
         for film in self.listafilm:
-            if film in self.listafilm:
-                self.listafilm.remove(film)
-                pass
+            return f"{film} - {self.__Genere}"
+    def printRentMovies(self, clientID):
+        return self.lista_Film_C
