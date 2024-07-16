@@ -5,21 +5,64 @@ def func1(Diz, Value):
             return (key)
         if val==None:
             return None
-print(func1(Diz={1: 'a', 2: 'b', 3: 'c'}, Value= "a"))
+ese1= func1(Diz={1: 'a', 2: 'b', 3: 'c'}, Value= "a")
+print("-ESERCIZIO 1:")
+print(ese1)
 
 #2. Scrivi una funzione che inverte le chiavi e i valori in un dizionario. Se ci sono valori duplicati, scarta i duplicati.
-def func2(diz):
-   for key, val in diz.items():
-       key[val]=key
+def func2(diz={}):
+    rev_diz={}
+    for keys, values in diz.items():
+       rev_diz[values]=keys
+    return rev_diz
+ese2= func2({1: 'a', 2: 'b', 3: 'c'})
+print("-ESERCIZIO 2:")
+print(ese2)
 #3. Scrivi una funzione che riceve una lista di numeri, filtra i numeri pari, e restituisce una nuova lista con i numeri pari moltiplicati per un fattore dato.
-def func3(numeri: list) ->list:
-    pass
+def func3(numeri: list, fattore):
+    num_pari=[]
+    numeri_molt=[]
+    for n in numeri:
+        if n % 2 == 0:
+            num_pari.append(n)
+    for num in num_pari:
+        Prodotto= num*fattore
+        numeri_molt.append(Prodotto)
+    return numeri_molt
+
+ese3=func3([3,4,5,6,7,8,9], 3)
+print("-ESERCIZIO 3:")
+print(ese3)
 #4. Scrivi una funzione che determina se un numero è 'magico'. Un numero è considerato magico se è divisibile per 4 ma non per 6.
- 
+def func4(numero):
+    if numero % 4 == 0 and numero % 6 != 0:
+        return "Magic!"
+    else:
+        return "No Magic :("
+print("-ESERCIZIO 4:")
+print(func4(8))
+print(func4(12))
+print(func4(18))
+print(func4(20))
 #5. Scrivi una funzione che accetti una lista di numeri e ritorni la somma dei numeri che sono divisibili sia per 2 che per 3.
- 
+def func5(numeri= []):
+    num_div=[]
+    for n in numeri:
+        if n % 2 == 0 and n % 3 == 0:
+            num_div.append(n)
+            somma = sum(num_div)
+    return somma
+print("-ESERCIZIO 5:")
+ese5=func5([6, 12, 33, 24])
+print(ese5)
 #6. Scrivi una funzione che accetti un dizionario di prodotti con i prezzi e restituisca un nuovo dizionario con solo i prodotti che hanno un prezzo superiore a 20, scontati del 10%.
- 
+
+
+
+
+
+
+
 #7. Scrivi una funzione che prenda in input una lista di dizionari che rappresentano voti di studenti e aggrega i voti per studente in un nuovo dizionario.
  
 #8. Scrivi una funzione che elimini dalla lista dati certi elementi specificati in un dizionario. Il dizionario contiene elementi da rimuovere come chiavi e il numero di volte che devono essere rimossi come valori.
