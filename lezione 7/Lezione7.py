@@ -56,10 +56,18 @@ print("-ESERCIZIO 5:")
 ese5=func5([6, 12, 33, 24])
 print(ese5)
 #6. Scrivi una funzione che accetti un dizionario di prodotti con i prezzi e restituisca un nuovo dizionario con solo i prodotti che hanno un prezzo superiore a 20, scontati del 10%.
+def func6(prodotti={}):
+    prod_scontati={}
+    for key, values in prodotti.items():
+        prodotti_scontati= 10/100
+        prodotti_scontati= values * prodotti_scontati
+        if prodotti_scontati >= 20:
+            prod_scontati[key]=prodotti_scontati
+    return prod_scontati
 
-
-
-
+print("-ESERCIZIO 6:")
+ese6=func6({"pomodoro": 10, "Cocomero": 200, "Guanciale": 400,"banana": 300, "yogurt": 5})
+print(ese6)
 
 
 
@@ -87,7 +95,9 @@ print(ese5)
  
 #18. Scrivi una funzione che rimuove tutti i duplicati da una lista, contenente sia numeri che lettere, mantenendo l'ordine originale degli elementi.
  
-#19. Scrivi una funzione che ruota gli elementi di una lista verso sinistra di un numero specificato k di posizioni. La rotazione verso sinistra significa che ciascun elemento della lista viene spostato a sinistra di una posizione e l'elemento iniziale viene spostato alla fine della lista. Per la rotazione utilizzare lo slicing e gestire il caso in cui il numero specificato di posizioni sia maggiore della lunghezza della lista.
+#19. Scrivi una funzione che ruota gli elementi di una lista verso sinistra di un numero specificato k di posizioni. 
+# La rotazione verso sinistra significa che ciascun elemento della lista viene spostato a sinistra di una posizione e l'elemento iniziale viene spostato alla fine della lista. 
+# Per la rotazione utilizzare lo slicing e gestire il caso in cui il numero specificato di posizioni sia maggiore della lunghezza della lista.
  
 #20. Scrivi una funzione che accetti tre parametri: username, password e status di attivazione dell'account (attivo/non attivo). L'accesso è consentito solo se il nome utente è "admin", la password corrisponde a "12345" e l'account è attivo.
  
