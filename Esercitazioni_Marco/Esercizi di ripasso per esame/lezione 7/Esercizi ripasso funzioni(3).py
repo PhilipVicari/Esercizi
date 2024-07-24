@@ -35,33 +35,32 @@ def rimuovi_elementi(lista: list[int], da_rimuovere: dict[int: int]) -> list[int
 #             create_account(account_id): crea un nuovo account con l'ID specificato e un saldo pari a 0.
 #             deposit(account_id, amount): deposita l'importo specificato sul conto con l'ID fornito.
 #             get_balance(account_id): restituisce il saldo del conto con l'ID specificato.
-    """
-        class Account():
-            def __init__(self, account_id: str, balance) -> None:
-                self.account_id= account_id
-                self.balance= 0.0
-            
-            def deposit_A(self, amount: float):
-                self.balance= self.balance + amount
+
+class Account():
+    def __init__(self, account_id: str, balance) -> None:
+        self.account_id= account_id
+        self.balance= 0.0
+    
+    def deposit_A(self, amount: float):
+        self.balance= self.balance + amount
+
+    def get_balance(self):
+        return self.balance
+
+class Bank():
+    def __init__(self, accounts:dict[str, Account]) -> None:
+        self.accounts= accounts
         
-            def get_balance(self):
-                return self.balance
+    def create_account(self, account_id: str):
+        self.accounts[account_id]
+    def deposit(self, account_id: str, amount: float):
+        if account_id in self.accounts: 
+            self.accounts[account_id]= Account.deposit_A(amount)
+    
+    def get_balance(self, account_id: str):
+        return self.accounts[account_id].get_balance()
 
-        class Bank():
-            def __init__(self) -> None:
-                self.accounts= {}
-                
-            def create_account(self, account_id: str):
-                self.accounts[account_id]= (account_id)
-
-            def deposit(self, account_id: str, amount: float):
-                if account_id in self.accounts:
-                    self.accounts[account_id]= Account.deposit_A(amount)
-            
-            def get_balance(self, account_id: str):
-                return self.accounts[account_id].get_balance()
-
-
+"""
         class Account:
             def __init__(self, account_id: str):
                 self.account_id = account_id
@@ -259,3 +258,80 @@ class Customer():
             self.is_rented==False
         else:
             print(f"Il film {self.title} non attualmente noleggiato")
+class VideoRentalStore():
+    def __init__(self, movies:dict[{str, Movie}], customers:dict[str, Customer]) -> None:
+        self.movies= movies
+        self.customers= customers
+    def add_movie(self, movie_id:str, title:str, director:str):
+        if movie_id not in self.movies:
+            self.movies[movie_id]= [self.movies]
+        else:
+            self.movies[movie_id].append(self.movies)
+        return self.movies
+    
+    def register_customer(self, customers_id: str, name:str):
+        if customers_id not in self.customers:
+            self.customers[customers_id]= [self.customers]
+        else:
+            self.customers[customers_id].append(self.customers)
+        return self.customers
+    
+    def rent_movie(self, customers_id: str, movie_id:str):
+        if customers_id in self.customers:
+            if movie_id in self.movies:
+
+    def return_movie(self, customers_id: str, movie_id:str):
+        if customers_id in self.customers:
+            if movie_id in self.movies:
+                return self.movies
+            else:
+                return f"Cliente o film non trovato"
+    def get_rented_movies(self, customers_id: str) -> list [Movie]:
+        customers_id
+
+
+
+
+class Book():
+    def __init__(self, book_id:str, title: str, author: str, is_borrowed: bool) -> None:
+        self.book_id= book_id
+        self.title= title
+        self.author= author
+        self.is_borrowed=is_borrowed
+    
+    def borrow(self):
+        if self.is_borrowed== True:
+            self.is_borrowed==False
+    def return_book(self):
+        self.is_borrowed==True
+        
+class Member():
+    def __init__(self, member_id: str, name:str, borrowed_books:list[Book]) -> None:
+        self.member_id=member_id
+        self.name=name
+        self.borrowed_books=borrowed_books
+    def borrow_book(self, book):
+        if book not in self.borrowed_books:
+            self.borrowed_books.append(book)
+class Library():
+    def __init__(self, books:dict[str, Book], members:dict[str, Member]) -> None:
+        self.books=books
+        self.members=members
+    def add_book(self, book_id:str, title:str, author:str):
+        if book_id not in self.books:
+            self.books[book_id]= [title]
+        else:
+            self.books[book_id].append(title)
+    def register_member(self, member_id:str, name:str):
+        if member_id not in self.members:
+            self.members[member_id]=[name]
+        else:
+            self.members[member_id].append(name)
+    def borrow_book(self, member_id:str, book_id:str):
+        if member_id in self.members:
+            if book_id in self.books:
+                pass
+    def return_book(member_id:str, book_id:str):
+            
+        
+        

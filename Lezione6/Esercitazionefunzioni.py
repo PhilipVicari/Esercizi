@@ -3,8 +3,8 @@ from collections import Counter
 
 
 def frequency_dict(elements: list) -> dict:
-    a = dict(Counter(elements))
-    print(a)
+        a = dict(Counter(elements))
+        print(a)
 frequency_dict(['mela', 'banana', 'mela'])
 """
 
