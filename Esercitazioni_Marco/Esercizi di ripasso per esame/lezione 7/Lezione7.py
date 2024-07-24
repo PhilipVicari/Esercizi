@@ -87,8 +87,9 @@ ese7=func7([{"Mario": 7}, {"Flavio": 6}, {"Mario": 8}])
 print(ese7)
 
 
-#8. Scrivi una funzione che elimini dalla lista dati certi elementi specificati in un dizionario. Il dizionario contiene elementi da rimuovere come chiavi e il numero di volte che devono essere rimossi come valori.
-def func8(lista: list[int], da_rimuovere: dict[int:int]) -> list[int]:
+#8. Scrivi una funzione che elimini dalla lista dati certi elementi specificati in un dizionario. 
+# Il dizionario contiene elementi da rimuovere come chiavi e il numero di volte che devono essere rimossi come valori.
+"""def func8(lista: list[int], da_rimuovere: dict[int:int]) -> list[int]:
     
     for key, values in da_rimuovere.items():
         while values > 0:
@@ -96,12 +97,29 @@ def func8(lista: list[int], da_rimuovere: dict[int:int]) -> list[int]:
                 lista.remove(key)
                 values-=1
     return lista
-print("-ESERCIZIO 7:")
-ese8=func8(([1, 2, 3, 2, 4], {2: 1}))
-print(ese8)
 
-#9. Scrivi una funzione che converta una lista di tuple (chiave, valore) in un dizionario. Se la chiave è già presente, aggiungi il valore alla lista di valori già associata alla chiave.
- 
+
+print("-ESERCIZIO 8:")
+ese8=func8(([1, 2, 3, 2, 4], {2: 1}))
+print(ese8)"""  
+
+#9. Scrivi una funzione che converta una lista di tuple (chiave, valore) in un dizionario. 
+# Se la chiave è già presente, aggiungi il valore alla lista di valori già associata alla chiave.
+def func9(tuple_list):
+    diz={}
+    for e in tuple_list:
+        e=tuple_list[0]
+        values= tuple_list[1]
+        diz[e] = [values]
+        if diz[e] in diz.items():
+            diz.update(diz[values])
+        if diz[e]
+    return diz
+
+print("-ESERCIZIO 9:")
+ese9=func9([(1, 2), (1, 3), (2, 4), (3, 5)])
+print(ese9)
+
 #10. Scrivi una funzione che prende una lista di numeri e ritorna un dizionario che classifica i numeri in liste separate per numeri pari e dispari.
  
 #11. Scrivi una funzione che converte una temperatura da gradi Celsius a Fahrenheit e viceversa a seconda del parametro. Utilizza il concetto di parametri opzionali.
@@ -124,9 +142,11 @@ print(ese8)
 # La rotazione verso sinistra significa che ciascun elemento della lista viene spostato a sinistra di una posizione e l'elemento iniziale viene spostato alla fine della lista. 
 # Per la rotazione utilizzare lo slicing e gestire il caso in cui il numero specificato di posizioni sia maggiore della lunghezza della lista.
  
-#20. Scrivi una funzione che accetti tre parametri: username, password e status di attivazione dell'account (attivo/non attivo). L'accesso è consentito solo se il nome utente è "admin", la password corrisponde a "12345" e l'account è attivo.
+#20. Scrivi una funzione che accetti tre parametri: username, password e status di attivazione dell'account (attivo/non attivo). 
+# L'accesso è consentito solo se il nome utente è "admin", la password corrisponde a "12345" e l'account è attivo.
  
-#21. Scrivi una funzione che verifica se una combinazione di condizioni (A, B, e C) è soddisfatta per procedere con un'operazione. L'operazione può procedere solo se la condizione A è vera o se entrambe le condizioni B e C sono vere.
+#21. Scrivi una funzione che verifica se una combinazione di condizioni (A, B, e C) è soddisfatta per procedere con un'operazione. 
+# L'operazione può procedere solo se la condizione A è vera o se entrambe le condizioni B e C sono vere.
  
 #22. Scrivi una funzione che riceve un numero e stampa un conto alla rovescia da quel numero a zero.
  
@@ -136,13 +156,15 @@ print(ese8)
  
 #25. Scrivi una funzione che conta quante volte un elemento appare isolato in una lista di numeri interi. Un elemento è considerato isolato se non è affiancato da elementi uguali.
  
-#26. Scrivi una funzione chiamata create_contact() che accetta il nome e cognome, e-mail (facoltativo) e numero di telefono (facoltativo). La funzione dovrebbe restituire un dizionario con i dettagli del contatto.
+#26. Scrivi una funzione chiamata create_contact() che accetta il nome e cognome, e-mail (facoltativo) e numero di telefono (facoltativo). 
+# La funzione dovrebbe restituire un dizionario con i dettagli del contatto.
 
 #ESEMPIO: create_contact("Mario Rossi", email="mario.rossi@gmail.com", telefono=69876543)
 
 #OUTPUT: {'profile': 'Mario Rossi', 'email': 'mario.rossi@gmail.com', 'telefono': 788787}
 
-#Scrivi una funzione chiamata update_contact() che accetta il dizionario creato, il nome e cognome del contatto da aggiornare, e il dettaglio facoltativo da aggiornare. Questa funzione dovrebbe aggiornare il dizionario del contatto.
+#Scrivi una funzione chiamata update_contact() che accetta il dizionario creato, il nome e cognome del contatto da aggiornare, e il dettaglio facoltativo da aggiornare. 
+# Questa funzione dovrebbe aggiornare il dizionario del contatto.
 
 #ESEMPIO: update_contact(dict, "Mario Rossi", telefono=123456789)
 
