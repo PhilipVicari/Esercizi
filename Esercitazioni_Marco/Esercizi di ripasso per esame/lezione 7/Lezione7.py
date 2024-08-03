@@ -105,19 +105,16 @@ print(ese8)"""
 
 #9. Scrivi una funzione che converta una lista di tuple (chiave, valore) in un dizionario. 
 # Se la chiave è già presente, aggiungi il valore alla lista di valori già associata alla chiave.
-def func9(tuple_list):
-    diz={}
-    for e in tuple_list:
-        e=tuple_list[0]
-        values= tuple_list[1]
-        diz[e] = [values]
-        if diz[e] in diz.items():
-            diz.update(diz[values])
-        if diz[e]
-    return diz
-
+def func9(tuple_list:list):
+    result = {}
+    for key, val in tuple_list:
+        if key in result:
+            result[key].append(val)
+        else:
+            result[key] = [val]
+    return result
 print("-ESERCIZIO 9:")
-ese9=func9([(1, 2), (1, 3), (2, 4), (3, 5)])
+ese9=func9([('a', 1), ('b', 2), ('a', 3)])
 print(ese9)
 
 #10. Scrivi una funzione che prende una lista di numeri e ritorna un dizionario che classifica i numeri in liste separate per numeri pari e dispari.

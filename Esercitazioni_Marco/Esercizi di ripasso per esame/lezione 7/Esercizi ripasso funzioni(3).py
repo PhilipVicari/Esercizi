@@ -216,8 +216,7 @@ class RecipeManager:
                 return self.recipe(ingredient)
         else:
             return"Errore"
-        
-        
+  
 manager = RecipeManager()
 print(manager.create_recipe("Torta di mele", ["Farina", "Uova", "Mele"]))
 print(manager.add_ingredient("Torta di mele", "Zucchero"))
@@ -279,7 +278,7 @@ class VideoRentalStore():
     def rent_movie(self, customers_id: str, movie_id:str):
         if customers_id in self.customers:
             if movie_id in self.movies:
-
+                pass
     def return_movie(self, customers_id: str, movie_id:str):
         if customers_id in self.customers:
             if movie_id in self.movies:
@@ -332,6 +331,6 @@ class Library():
             if book_id in self.books:
                 pass
     def return_book(member_id:str, book_id:str):
-            
+        pass    
         
         
