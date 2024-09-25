@@ -20,4 +20,4 @@ def indexpippo():
             return render_template('si.html', nome=nome, cognome = cognome)
     return render_template('no.html', nome=nome, cognome = cognome)
 
-api.run(host="0.0.0.0", port=8085).py
+api.run(host="0.0.0.0", port=8085)
