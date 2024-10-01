@@ -1,0 +1,34 @@
+{
+    "Cittadini": [
+      {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "dataN": "1985-06-15",
+        "codF": "RSSMRA85H15H501Z"
+      },
+      {
+        "nome": "Laura",
+        "cognome": "Bianchi",
+        "dataN": "1990-08-22",
+        "codF": "BNCGZR90M62L219E"
+      },
+      {
+        "nome": "Giuseppe",
+        "cognome": "Verdi",
+        "dataN": "1978-11-30",
+        "codF": "VRDGPS78S30H501L"
+      },
+      {
+        "nome": "Francesca",
+        "cognome": "Gallo",
+        "dataN": "1995-03-05",
+        "codF": "GLLFNC95C45F205Z"
+      },
+      {
+        "nome": "Alessandro",
+        "cognome": "Conti",
+        "dataN": "1982-12-02",
+        "codF": "CNTLSN82T02D123F"
+      }
+    ]
+  }
