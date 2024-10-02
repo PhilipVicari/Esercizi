@@ -43,8 +43,28 @@ def GestisciRichiediCIttadino():
         anagrafe = JsonDeserialize(sAnagrafe)
         if sCodiceFiscale in anagrafe:
             dati = anagrafe[sCodiceFiscale]
-            JsonSerialize(anagrafe,sAnagrafe)
+            JsonSerialize(anagrafe, sAnagrafe)
             jsonResp = {"Esito":"000", "Msg":"ok", 'dati:': dati }
+            return json.dumps(jsonResp),200
+        else:
+            jsonResp = {"Esito":"001", "Msg":"Cittadino gia presente"}
+            return json.dumps(jsonResp),200
+    else:
+        return 'Content-Type not supported!',401
+    
+@api.route('/modifica_cittadino', methods= ['PUT'])
+def GestisciModificaCIttadino():
+    content_type = request.headers.get('Content-Type')
+    print("Ricevuta chiamata " + content_type)
+    if (content_type == 'application/json'):
+        jsonReq = request.json
+        sCodiceFiscale = jsonReq["codice fiscale"]
+        anagrafe = JsonDeserialize(sAnagrafe)
+        if sCodiceFiscale in anagrafe:
+            N_Cittadino= jsonReq
+            anagrafe[sCodiceFiscale] = N_Cittadino
+            JsonSerialize(anagrafe, sAnagrafe)
+            jsonResp = {"Esito":"000", "Msg":"ok", 'Cittadino:': N_Cittadino }
             return json.dumps(jsonResp),200
         else:
             jsonResp = {"Esito":"001", "Msg":"Cittadino gia presente"}
@@ -54,3 +74,5 @@ def GestisciRichiediCIttadino():
 
 
 api.run(host="127.0.0.1", port=8080)
+
+

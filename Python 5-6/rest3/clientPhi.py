@@ -1,4 +1,5 @@
-import requests,json
+from flask import json
+import requests
 import sys
 
 base_url = "http://127.0.0.1:8080"
@@ -22,19 +23,40 @@ def GetDatiCittadino():
 
 
 def RichiediCittadino():
-    codf= input("Inserisci il codice fiscale:")
-    datiCittadino={'codice fiscale': codf}
+    codF= input("Inserisci il codice fiscale:")
+    datiCittadino={'codice fiscale': codF}
     return datiCittadino
 
 def ModificaCittadino():
-    nome = input("Qual'è il nome?")
-    cognome = input("Qual'è il cognome")
-    dataN = input("Qual'è la data di nascita?")
     codF = input("Qual'è il codice fiscale?")
-    datiCittadino = {"nome":nome, "cognome": cognome, "data nascita":dataN, "codice fiscale":codF}
-    return datiCittadino
+    datiCittadino={'codice fiscale': codF}
+    Msg= input("Quale elemento vuoi cambiare?")
+    if Msg == "nome":
+        nome = input("Qual'è il nome?")
+        nome_nuovo = nome
+        datiCittadino = {"nome":nome_nuovo}
+        return datiCittadino
+    elif Msg == "cognome":
+        cognome = input("Qual'è il cognome?")
+        cognome_nuovo = cognome
+        datiCittadino = {"cognome": cognome_nuovo}
+        return datiCittadino
+    elif Msg == "data nascita":
+        dataN = input("Qual'è la data di nascita?")
+        dataN_nuovo = dataN
+        datiCittadino = {"data nascita":dataN_nuovo}
+        return datiCittadino
+    elif Msg == "Codice fiscale":
+        codF = input("Qual'è il codice fiscale?")
+        codF_Nuovo = codF
+        datiCittadino = {"codice fiscale":codF_Nuovo}
+        return datiCittadino
+    else:
+        return "Errore nell'inserimento"
 
-    
+def EliminaCittadino():
+    codF = input("Qual'è il codice fiscale?")
+    datiCittadino={'codice fiscale': codF}
 print("Operazioni disponibili:")
 print("1. Inserisci cittadino (es. atto di nascita)")
 print("2. Richiedi cittadino (es. cert. residenza)")
@@ -44,7 +66,7 @@ print("5. Esci")
 sOper = input("Cosa vuoi fare?")
 while(True):
     if sOper == "1":
-        print("Richiesta atto di nascita")
+        print("Inserimento nuovo cittadino")
         api_url = base_url + "/add_cittadino"
         jsonDataRequest = GetDatiCittadino()
         try:
@@ -58,8 +80,8 @@ while(True):
         except:
             print("Problemi di comunicazione con il server, riprova più tardi")
             
-    if sOper == "2":
-        print("Richiesta codice fiscale")
+    elif sOper == "2":
+        print("Richiesta Cittadino")
         api_url = base_url + "/richiedi_cittadino"
         jsonDataRequest = RichiediCittadino()
         try:
@@ -73,8 +95,8 @@ while(True):
         except:
             print("Problemi di comunicazione con il server, riprova più tardi")
     
-    if sOper == "3":
-        print("Richiesta codice fiscale")
+    elif sOper == "3":
+        print("Modifica Cittadino")
         api_url = base_url + "/modifica_cittadino"
         jsonDataRequest = ModificaCittadino()
         try:
@@ -87,7 +109,22 @@ while(True):
             print(data2)
         except:
             print("Problemi di comunicazione con il server, riprova più tardi")
+            
+    elif sOper == "4":
+        print("Modifica Cittadino")
+        api_url = base_url + "/modifica_cittadino"
+        jsonDataRequest = ModificaCittadino()
+        try:
+            response = requests.get(api_url,json=jsonDataRequest)
         
+            #print(response.json())
+            print(response.status_code)
+            print(response.headers["Content-Type"])
+            data2 = response.json()
+            print(data2)
+        except:
+            print("Problemi di comunicazione con il server, riprova più tardi")      
+              
     if sOper=="5":
         print("Buona giornata!")
         sys.exit()
